@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mis Addons</title>
+<style>
+    body { font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; }
+    .addon { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 25px; }
+    .addon h2 { margin-top: 0; color: #333; }
+    .addon p { color: #555; }
+    .btn { display: inline-block; padding: 10px 15px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; margin-top: 10px; }
+    .stars { margin-top: 10px; }
+    .stars span { font-size: 22px; cursor: pointer; color: #ccc; }
+    .stars span:hover, .stars span.active { color: gold; }
+</style>
+</head>
+<body>
+
+<!-- BLOQUE DE ADDON -->
+<div class="addon">
+    <h2>tibler</h2>
+    <p>Tibler un addon creado por zilonex, el tibler es un golem de tierra y piedra,con poder igual al whither, con los mismos efectos, con pocas animaciones, estando en la version 1.0.</p>
+    <a class="btn" href="https://www.mediafire.com/file/h05p5p4kfxz8rp9/%25C2%25A75Tibler_%25C2%25A79golem.mcaddon/file" target="_blank">Descargar .mcaddon</a>
+    <div class="stars">
+        <span onclick="rate(this)">★</span>
+        <span onclick="rate(this)">★</span>
+        <span onclick="rate(this)">★</span>
+        <span onclick="rate(this)">★</span>
+        <span onclick="rate(this)">★</span>
+    </div>
+</div>
+<!-- FIN BLOQUE DE ADDON -->
+
+<script>
+function rate(star) {
+    let stars = star.parentElement.querySelectorAll("span");
+    let index = Array.from(stars).indexOf(star);
+    stars.forEach((s, i) => {
+        s.classList.toggle("active", i <= index);
+    });
+}
+</script>
+
+</body>
+</html>
