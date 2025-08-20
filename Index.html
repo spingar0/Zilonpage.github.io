@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theromc</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #4a148c, #0d47a1, #1b5e20);
+      background-size: cover;
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    /* Pantalla de bienvenida */
+    #welcome {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #4a148c, #0d47a1, #1b5e20);
+      color: white;
+      font-size: 3rem;
+      font-weight: bold;
+      animation: fadeOut 2s ease-in-out forwards;
+      animation-delay: 2.5s;
+      z-index: 9999;
+    }
+
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; visibility: hidden; }
+    }
+
+    #welcome h1 {
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Encabezado con degradado */
+    header {
+      padding: 20px;
+      background: linear-gradient(90deg, #27996d, #1a77c4, #6b2ac9);
+      color: white;
+      font-size: 2.5rem;
+      font-weight: 800;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    /* Contenedor general */
+    .content {
+      margin: 40px auto;
+      max-width: 900px;
+      background: rgba(50, 50, 50, 0.8);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+      color: #f5f5f5;
+    }
+
+    .content h2 {
+      color: #d1c4e9;
+    }
+
+    /* Bloques de addons */
+    .addon {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      margin-bottom: 25px;
+      text-align: left;
+      color: #333;
+    }
+
+    .addon h2 { margin-top: 0; color: #6b2ac9; }
+    .addon p { color: #555; }
+    .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      background: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    .btn:hover { background: #0056b3; }
+
+    /* Estrellas */
+    .stars { margin-top: 10px; }
+    .stars span {
+      font-size: 22px;
+      cursor: pointer;
+      color: #ccc;
+    }
+    .stars span:hover,
+    .stars span.active { color: gold; }
+
+    /* Footer */
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Pantalla de bienvenida -->
+  <div id="welcome">
+    <h1>Welcome</h1>
+  </div>
+
+  <!-- Header -->
+  <header>
+    Theromc
+  </header>
+
+  <!-- Contenido principal -->
+  <div class="content">
+    <h2>📦 Addons</h2>
+    <p>Created by Zilonex</p>
+
+    <!-- BLOQUE DE ADDON -->
+    <div class="addon">
+      <h2>Tibler Golem</h2>
+      <p>Tibler es un addon creado por Zilonex. Es un golem de tierra y piedra, con poder igual al Wither, con los mismos efectos y pocas animaciones. Versión 1.0.0</p>
+      <a class="btn" href="https://www.mediafire.com/file/h05p5p4kfxz8rp9/%25C2%25A75Tibler_%25C2%25A79golem.mcaddon/file" target="_blank">Descargar</a>
+      <div class="stars">
+        <span onclick="rate(this)">★</span>
+        <span onclick="rate(this)">★</span>
+        <span onclick="rate(this)">★</span>
+        <span onclick="rate(this)">★</span>
+        <span onclick="rate(this)">★</span>
+      </div>
+    </div>
+    <!-- FIN BLOQUE DE ADDON -->
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 - Zilonex
+  </footer>
+
+  <script>
+    function rate(star) {
+      let stars = star.parentElement.querySelectorAll("span");
+      let index = Array.from(stars).indexOf(star);
+      stars.forEach((s, i) => {
+        s.classList.toggle("active", i <= index);
+      });
+    }
+  </script>
+</body>
+</html>
